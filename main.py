@@ -25,4 +25,3 @@ def send_welcome(message):
 
 bot.polling()
 while True:
-    passgti
