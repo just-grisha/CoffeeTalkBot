@@ -4,6 +4,7 @@ TOKEN = '5742628016:AAGf8TffSFrJQGlJKMPjDF0gNEDADPUatJY'
 
 bot = telebot.TeleBot(TOKEN)
 
+
 '''
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -19,9 +20,11 @@ def say_hello_to_user(message):
 '''
 
 @bot.message_handler(commands=['start', 'help'])
+def start(message):
+	bot.send_message(message.chat.id, '<b>Привет</b>', parse_mode = 'html')
 def send_welcome(message):
 	bot.reply_to(message, "Howdy, how are you doing?")
 
 
-bot.polling()
-while True:
+bot.polling(none_stop = True)
+
